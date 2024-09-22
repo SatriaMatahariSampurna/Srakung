@@ -1,0 +1,705 @@
+ .navbar-brand img {
+            height: 50px;
+        }
+        .carousel-item {
+            height: 680px;
+    }
+        .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+        }  
+        .shadow-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #fff; /* Pastikan warna teks kontras dengan background */
+        padding: 20px; /* Tambahkan padding untuk jarak sekitar teks */
+        border-radius: 8px; /* Tambahkan border radius jika diinginkan */
+    }
+    .navbar {
+        position: fixed; /* Membuat navbar tetap di posisi */
+        top: 0; /* Menempatkan navbar di bagian atas */
+        left: 0;
+        right: 0;
+        z-index: 1000; /* Menempatkan navbar di atas elemen lainnya */
+        background-color: #fff; /* Warna latar belakang navbar */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan jika perlu */
+        transition: background-color 0.3s; /* Transisi saat menggulir */
+    }
+    
+    body {
+        padding-top: 70px; /* Sesuaikan dengan tinggi navbar */
+    }
+    
+    
+    #carousel-title {
+        margin-bottom: 10px; /* Spasi antara judul dan tombol */
+    }
+        .map-container {
+            height: 300px;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .map-container.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        html, body {
+            scroll-behavior: smooth;
+        }
+        .typing-container {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+            display: inline-block;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: orange; }
+        }
+        .typing-container.finished {
+            border-right: none;
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
+        /* Style for news section */
+        #berita {
+            background-color: #f8f9fa;
+        }
+
+        #berita .nav-tabs .nav-link {
+            border-radius: 0;
+            border: 1px solid #dee2e6;
+        }
+
+        #berita .nav-tabs .nav-link.active {
+            background-color: #ffffff;
+            border-color: #dee2e6 #dee2e6 #ffffff;
+        }
+
+        #berita .table {
+            margin-top: 20px;
+        }
+
+        #berita .table th, #berita .table td {
+            text-align: center;
+        }
+
+        #berita .table td a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        #berita .table td a:hover {
+            text-decoration: underline;
+        }
+        #saran-komentar {
+            background-color: #f8f9fa;
+        }
+
+        #comments-section .comment {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #ffffff;
+        }
+
+        #comments-section .comment .btn {
+            margin-left: 10px;
+        }
+
+        .edit-btn, .delete-btn {
+            cursor: pointer;
+        }
+
+        .edit-btn {
+            color: blue;
+        }
+
+        .delete-btn {
+            color: red;
+        }
+        #comments-section {
+    max-height: 400px; /* Sesuaikan tinggi sesuai kebutuhan */
+    overflow-y: auto;
+}
+
+.comment {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.edit-btn, .delete-btn {
+    cursor: pointer;
+}
+
+.edit-btn {
+    color: blue;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.comment {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    position: relative; /* Untuk menempatkan dropdown menu dengan absolute positioning */
+}
+
+.comment .dropdown-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none; /* Menyembunyikan dropdown menu secara default */
+}
+
+.comment.show-dropdown .dropdown-menu {
+    display: block; /* Menampilkan dropdown menu saat dibutuhkan */
+}
+
+/* From Uiverse.io by satyamchaudharydev */ 
+.button {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+  background-color: rgb(0 107 179);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffff;
+  gap: 10px;
+  font-weight: bold;
+  border: 3px solid #ffffff4d;
+  outline: none;
+  overflow: hidden;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  border-color: #fff9;
+}
+.button a {
+    color: white;
+    text-decoration: none;
+}
+
+.button a:hover {
+    color: white; /* Pastikan tetap putih saat hover */
+    text-decoration: none; /* Tidak ada garis bawah saat hover */
+}
+
+
+.button:hover .icon {
+  transform: translate(4px);
+}
+
+.button:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+#berita-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.berita-item {
+    display: none;
+}
+
+.berita-item.show {
+    display: block;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.page-link {
+    cursor: pointer;
+}
+
+.btn-primary {
+    border-radius: 10px; /* Membuat tombol juga oval di ujungnya */
+}
+/* Efek hover hanya untuk layar laptop */
+@media (min-width: 768px) {
+    .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* Mengatur tampilan 2 card di layar kecil (HP) secara vertikal */
+@media (max-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .card {
+        box-shadow: none; /* Menonaktifkan efek shadow di layar kecil */
+        transition: none;  /* Menonaktifkan efek transformasi di layar kecil */
+    }
+}
+
+/* Styling tambahan untuk card */
+.card {
+    margin-bottom: 20px; /* Tambahan margin bawah untuk spasi antar card */
+}
+
+/* General styling for news cards */
+.news-card {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news-card:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* Desktop view: 3 grid columns */
+@media (min-width: 1024px) {
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Display carousel navigation */
+    .carousel-control-prev, .carousel-control-next {
+        display: block;
+    }
+}
+
+/* Mobile view: 2 grid columns */
+@media (max-width: 1023px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Hide carousel navigation */
+    .carousel-control-prev, .carousel-control-next {
+        display: none;
+    }
+
+    /* Disable carousel functionality on mobile */
+    .carousel {
+        overflow: hidden;
+    }
+}
+/* Menghilangkan scroll pada elemen tertentu */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* Contoh penggunaan */
+.some-container {
+    height: 500px; /* Atur tinggi sesuai kebutuhan */
+    overflow: hidden; /* Menghilangkan scroll pada container ini */
+}
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Efek untuk card */
+.slide-in-right {
+    animation: slideInRight 1s ease-out forwards;
+}
+/* Menggunakan Google Font Poppins untuk judul */
+#map-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Animasi slide-in dari sisi kanan */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Efek animasi untuk card */
+.slide-in-right {
+    animation: slideInRight 1s ease-out forwards;
+    opacity: 0;
+}
+
+/* Menghilangkan border pada card atau tabel */
+.card {
+    border: none; /* Menghilangkan border dari card */
+    margin-bottom: 20px;
+}
+
+.card-body {
+    text-align: center;
+}
+.full-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%; /* Ini akan membuat gambar memenuhi card */
+}
+
+/* Posisi absolut untuk tombol "Lihat Selengkapnya" */
+.position-relative {
+    position: relative;
+}
+
+.see-more-btn {
+    right: 10px;
+    bottom: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+.card-img-top {
+    object-fit: cover;
+    width: 100%;
+    height: 200px; /* Atur tinggi sesuai kebutuhan */
+}
+#image-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 200px; /* Sesuaikan dengan tinggi gambar */
+}
+
+.slider-img {
+    position: absolute;
+    left: 0;
+    transition: opacity 1s ease;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes slide {
+    0% {
+        left: 100%;
+    }
+    25% {
+        left: 50%;
+    }
+    50% {
+        left: 0%;
+    }
+    75% {
+        left: -50%;
+    }
+    100% {
+        left: -100%; /* Kembali ke luar tampilan */
+    }
+}
+#image-slider {
+    position: relative;
+}
+
+.view-more-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* Sembunyikan tombol secara default */
+}
+
+#image-slider:hover .view-more-btn {
+    display: block; /* Tampilkan tombol saat hover */
+}
+.animated-card {
+    opacity: 0;
+    transform: translateX(100px); /* Mulai dari kanan */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animated-card.visible {
+    opacity: 1;
+    transform: translateX(0); /* Berhenti di posisi asli */
+}
+
+.animated-map {
+    opacity: 0;
+    transform: scale(0.5); /* Mulai mengecil */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animated-map.visible {
+    opacity: 1;
+    transform: scale(1); /* Berhenti di ukuran asli */
+}
+  .fade-in.scroll-effect {
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        
+        .fade-in.scroll-effect.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .card {
+            border-radius: 15px; /* Membuat card menjadi oval di ujung */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek transisi untuk timbul dan shadow */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow dasar */
+        }
+        
+        .card-img-top {
+            border-top-left-radius: 15px; /* Membuat oval di ujung atas card gambar */
+            border-top-right-radius: 15px;
+        }
+        
+        .card-body {
+            border-bottom-left-radius: 15px; /* Membuat oval di ujung bawah card body */
+            border-bottom-right-radius: 15px;
+        }
+        
+        /* Efek timbul saat hover */
+        .card:hover {
+            transform: translateY(-10px); /* Efek timbul ke atas */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow lebih dalam saat hover */
+        }
+        .card-left, .card-center, .card-right {
+            opacity: 0; /* Awalnya tidak terlihat */
+            transition: transform 1s ease, opacity 1s ease; /* Transisi untuk animasi */
+        }
+        
+        .card-left {
+            transform: translateX(-100%); /* Pindah ke kiri */
+        }
+        
+        .card-center {
+            transform: scale(0.5); /* Mengecil */
+        }
+        
+        .card-right {
+            transform: translateX(100%); /* Pindah ke kanan */
+        }
+        
+        /* Ketika card terlihat di layar, tambahkan kelas visible */
+        .visible.card-left {
+            transform: translateX(0); /* Kembali ke posisi normal */
+            opacity: 1; /* Muncul */
+        }
+        
+        .visible.card-center {
+            transform: scale(1); /* Kembali ke ukuran normal */
+            opacity: 1; /* Muncul */
+        }
+        
+        .visible.card-right {
+            transform: translateX(0); /* Kembali ke posisi normal */
+            opacity: 1; /* Muncul */
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk animasi transform dan shadow */
+        }
+        
+        .card.hovered {
+            transform: scale(1.05); /* Perbesar sedikit */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan */
+        }
+        .typing-effect {
+            font-family: 'Poppins', sans-serif; /* Ganti dengan font yang Anda inginkan */
+            font-size: 2.5rem; /* Ukuran font yang diinginkan */
+            display: inline-block;
+            overflow: hidden; /* Menyembunyikan bagian yang melampaui */
+            white-space: nowrap; /* Tidak membiarkan teks membungkus */
+            border-right: 3px solid rgb(240, 235, 235); /* Garis di sisi kanan */
+            animation: typing 4s steps(30, end), blink 0.75s ; /* Efek mengetik dan kedip */
+        }
+        
+        .text-black {
+            color: black;
+        }
+        
+        .text-white {
+            color: white;
+            background-color: black; /* Memberikan latar belakang hitam agar kontras */
+        }
+        
+        .border-black {
+            padding: 0 4px; /* Memberikan ruang di sekitar teks */
+        }
+        
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+        .title {
+            font-family: 'Poppins', sans-serif; /* Ganti dengan font yang Anda inginkan */
+            font-size: 2rem; /* Ukuran font yang diinginkan */
+            text-align: center; /* Mengatur posisi teks ke tengah */
+        }
+        
+        .text-blue {
+            color: rgb(0, 0, 0); /* Warna biru untuk "Pantai Srakung" */
+        }
+        
+        .text-white {
+            color: white; /* Warna putih untuk "Gunung Kidul" */
+            position: relative; /* Untuk posisi garis hitam */
+        }
+        
+        .border-black {
+            border-bottom: 1px solid black; /* Garis hitam tipis di bawah "Gunung Kidul" */
+            padding: 0 4px; /* Memberikan ruang di sekitar teks */
+        }
+        .card-effect {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        
+        .card-effect.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .image-container {
+            width: 100%; /* Memastikan lebar penuh */
+            height: 200px; /* Tinggi tetap untuk gambar */
+            overflow: hidden; /* Menyembunyikan bagian gambar yang keluar */
+            border-radius: 20px; /* Membuat sudut oval */
+        }
+        
+        .image-container img {
+            width: 100%; /* Memastikan gambar memenuhi lebar kontainer */
+            height: 100%; /* Memastikan gambar memenuhi tinggi kontainer */
+            object-fit: cover; /* Memastikan gambar terpotong dengan baik */
+        }
+   
+    .fade-in-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        animation: fadeInLeft 0.5s forwards;
+    }
+
+    .fade-in-center {
+        opacity: 0;
+        transform: scale(0.8);
+        animation: fadeInCenter 0.5s forwards;
+    }
+
+    .fade-in-right {
+        opacity: 0;
+        transform: translateX(50px);
+        animation: fadeInRight 0.5s forwards;
+    }
+
+    @keyframes fadeInLeft {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeInCenter {
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes fadeInRight {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
